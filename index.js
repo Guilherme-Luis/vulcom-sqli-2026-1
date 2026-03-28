@@ -30,6 +30,7 @@ app.post('/login', (req, res) => {
     
     // CONSULTA SQL VULNERÁVEL 🚨
     //const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`;
+    //
     const query = `SELECT * FROM users WHERE username = ? AND password = ?`;
     
     db.all(query, [username, password], (err, rows) => {
